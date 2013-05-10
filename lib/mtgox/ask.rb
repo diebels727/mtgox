@@ -19,9 +19,7 @@ module MtGox
     end
 
     def <=>(other)
-      return(1) if self.amount > other.amount
-      return(-1) if self.amount < other.amount
-      return(0) if self.amount == other.amount
+      self.amount <=> other.amount
     end
 
   end
