@@ -18,5 +18,11 @@ module MtGox
       price / (1 - self.client.commission)
     end
 
+    def <=>(other)
+      return(1) if self.amount > other.amount
+      return(-1) if self.amount < other.amount
+      return(0) if self.amount == other.amount
+    end
+
   end
 end
